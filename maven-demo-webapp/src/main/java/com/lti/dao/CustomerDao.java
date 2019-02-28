@@ -21,7 +21,7 @@ public class CustomerDao {
 		try {
 
 			Properties dbProps = new Properties();
-			dbProps.load(this.getClass().getClassLoader().getResourceAsStream("dev-db.properties"));
+			dbProps.load(this.getClass().getClassLoader().getResourceAsStream("prod-db.properties"));
 			Class.forName(dbProps.getProperty("driverClassName"));
 			conn = DriverManager.getConnection(dbProps.getProperty("url"), dbProps.getProperty("username"),
 					dbProps.getProperty("password"));
